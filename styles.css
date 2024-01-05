@@ -6,7 +6,7 @@
 
 :root {
     --text-color: white;
-    --bg-url: url(./assets/bg-desktop.jpg);
+    --bg-url: url(./assets/bg-mobile.jpg);
     --stroke-color: rgba(255, 255, 255, 0.5);
     --surface-color: rgba(255, 255, 255, 0.05);
     --surface-color-hover: rgba(255, 255, 255, 0.02);
@@ -16,7 +16,7 @@
 
 .light {
     --text-color: black;
-    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --bg-url: url(./assets/bg-mobile-light.jpg);
     --stroke-color: rgba(0, 0, 0, 0.5);
     --surface-color: rgba(0, 0, 0, 0.05);
     --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -26,6 +26,7 @@
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 body * {
@@ -34,7 +35,8 @@ body * {
 }
 
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
 }
@@ -62,6 +64,8 @@ body * {
     width: 64px;
 
     margin: 4px auto;
+
+    cursor: pointer;
 }
 
 #switch button {
@@ -76,6 +80,8 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    cursor: pointer;
 }
 
 .light #switch button {
@@ -163,4 +169,15 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 16px;
+}
+
+/* Media Queries */
+@media (min-width: 700px) {
+    :root {
+        --bg-url: url(./assets/bg-desktop.jpg);
+    }
+
+    .light {
+        --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
 }
